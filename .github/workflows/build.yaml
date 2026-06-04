@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        board: [corney_island]
+        board: [main_board]
     name: Generate ${{ matrix.board }}
     steps:
       - name: Checkout

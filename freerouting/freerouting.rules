@@ -1,4 +1,4 @@
-(rules PCB corney_island
+(rules PCB main_board 
   (snap_angle 
     fortyfive_degree
   )

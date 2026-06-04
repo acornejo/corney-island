@@ -1,17 +1,10 @@
 {
     "scripts": {
         "postinstall": "git submodule update --init --recursive --remote",
-        "build": "ergogen ./ergogen/ --output ./ --clear && npx @jscad/cli cases/corney_island_bottom_tray.jscad -of stla -o cases/corney_island_bottom_tray.stl",
-        "debug": "ergogen ./ergogen/ --output ./ --clear --debug && npx @jscad/cli cases/corney_island_bottom_tray.jscad -of stla -o cases/corney_island_bottom_tray.stl",
-        "watch:build": "nodemon -e yaml,js -x \"npm run build\"",
-        "watch:debug": "nodemon -e yaml,js -x \"npm run debug\""
+        "build": "ergogen ./ergogen/ --output ./ --clear && for i in cases/*.jscad; do npx @jscad/cli \"$i\" -of stla -o \"${i%.jscad}.stl\"; done"
     },
     "dependencies": {
         "ergogen": "^4.1.0",
-        "nodemon": "^3.0.1",
         "@jscad/cli": "1.10.0" 
-    },
-    "nodemonConfig": {
-      "delay": 2500
     }
 }
