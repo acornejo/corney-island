@@ -20,6 +20,6 @@ runs:
         fi
         if [ -e $GITHUB_WORKSPACE/pcbs/${board}.ses ]; then
           echo "Import SES";
-          $GITHUB_WORKSPACE/kibot/import_ses.py -b $GITHUB_WORKSPACE/pcbs/${board}.kicad_pcb -s $GITHUB_WORKSPACE/pcbs/${board}.ses -o $GITHUB_WORKSPACE/pcbs/${board}_autorouted.kicad_pcb
+          $GITHUB_WORKSPACE/scripts/import_ses.py -b $GITHUB_WORKSPACE/pcbs/${board}.kicad_pcb -s $GITHUB_WORKSPACE/pcbs/${board}.ses -o $GITHUB_WORKSPACE/pcbs/${board}_autorouted.kicad_pcb
         fi
       done

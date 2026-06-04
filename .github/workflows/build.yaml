@@ -6,8 +6,7 @@ on:
       - '.github/actions/*/action.yaml'
       - 'ergogen/footprints/*.js'
       - 'ergogen/config.yaml'
-      - 'kibot/*'
-      - 'freerouting/*'
+      - 'scripts/*'
       - 'package.json'
 
 name: Build
