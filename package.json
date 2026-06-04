@@ -1,7 +1,8 @@
 {
     "scripts": {
         "postinstall": "git submodule update --init --recursive --remote",
-        "build": "ergogen ./ergogen/ --output ./ --clear && for i in cases/*.jscad; do npx @jscad/cli \"$i\" -of stla -o \"${i%.jscad}.stl\"; done"
+        "build": "ergogen ./ergogen/ --output ./ --clear && for i in cases/*.jscad; do npx @jscad/cli \"$i\" -of stla -o \"${i%.jscad}.stl\"; done",
+        "clean": "rm -fR cases/ outlines/ images/ gerbers/ pcbs/"
     },
     "dependencies": {
         "ergogen": "^4.1.0",

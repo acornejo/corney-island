@@ -1,3 +1,4 @@
+# TODO: trackpad, routing1
 meta:
   engine: 4.1.0
   name: ergo-k33b
@@ -354,4 +355,9 @@ pcbs:
           name: "trackpad"
           outline_type: "full"
           points: [[0,0],[65,0],[65,50],[0,50]]
-      # TODO: trackpad, routing1
+cases:
+  bottom_case:
+    - what: outline
+      name: board
+      extrude: 2
+      shift: [-75,0,0]
