@@ -1,14 +1,24 @@
 #!/bin/bash
 set -e
+set -x
 
-LOCAL_PATH=${LOCAL_WORKSPACE_FOLDER:-$(pwd)}
-DRUN="docker run -w /board -v ${LOCAL_PATH}:/board --rm"
-GITHUB_WORKSPACE=""
+GITHUB_WORKSPACE=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+DOCKER_MOUNT=${LOCAL_WORKSPACE_FOLDER:-${GITHUB_WORKSPACE}}
+
+DRUN="docker run --platform=linux/amd64 -w /board -v ${DOCKER_MOUNT}:/board --rm"
 KICAD_IMAGE="ghcr.io/inti-cmnb/kicad8_auto:latest"
 FREEROUTING_IMAGE="ghcr.io/freerouting/freerouting:2.2.4"
 BOARDS="main_board"
+PLATES="frontplate backplate"
 
 npm run build
+
+for plate in $PLATES; do
+  echo "Processing $plate";
+
+  echo "Run kibot"
+  ${DRUN} ${KICAD_IMAGE} kibot -b $GITHUB_WORKSPACE/output/pcbs/${plate}.kicad_pcb -c $GITHUB_WORKSPACE/scripts/default.kibot.yaml
+done
 
 for board in $BOARDS; do
   echo "Processing $board";
