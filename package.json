@@ -6,6 +6,6 @@
     },
     "dependencies": {
         "@jscad/cli": "^1.10.0",
-        "ergogen": "^4.1.0"
+        "ergogen": "^4.2.0"
     }
 }

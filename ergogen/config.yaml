@@ -353,6 +353,7 @@ pcbs:
           ref.aggregate.parts: [matrixkeys_inner_num, mirror_matrixkeys_inner_num]
         params:
           name: "trackpad"
+          side: "F&B"
           outline_type: "full"
           points: [[0,0],[65,0],[65,50],[0,50]]
 cases:
