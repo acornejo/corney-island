@@ -21,6 +21,6 @@ runs:
         fi
         if [ -e $GITHUB_WORKSPACE/output/pcbs/${board}.dsn ]; then
           echo "Autoroute PCB";
-          java -jar /app/freerouting.jar -de $GITHUB_WORKSPACE/output/pcbs/${board}.dsn -do $GITHUB_WORKSPACE/output/pcbs/${board}.ses -dr $GITHUB_WORKSPACE/scripts/freerouting.rules --user-data-path $GITHUB_WORKSPACE/scripts -mp 25 -mt 1 -dct 0 --gui.enabled=false --profile.email=info@freerouting.app
+          java -jar /app/freerouting-executable.jar -de $GITHUB_WORKSPACE/output/pcbs/${board}.dsn -do $GITHUB_WORKSPACE/output/pcbs/${board}.ses -dr $GITHUB_WORKSPACE/scripts/freerouting.rules --user-data-path $GITHUB_WORKSPACE/scripts -mp 25 -mt 1 -dct 0 --gui.enabled=false --profile.email=info@freerouting.app
         fi
       done
