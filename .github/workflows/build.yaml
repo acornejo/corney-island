@@ -64,9 +64,4 @@ jobs:
           name: ${{ matrix.board }}
           if-no-files-found: error
           overwrite: true
-          path:  |
-            cases
-            gerbers
-            images
-            outlines
-            pcbs
+          path:  output
