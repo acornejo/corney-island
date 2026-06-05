@@ -5,7 +5,7 @@
         "clean": "rm -fR output/"
     },
     "dependencies": {
-        "@jscad/cli": "^2.3.8",
+        "@jscad/cli": "^1.10.0",
         "ergogen": "^4.2.1"
     }
 }
