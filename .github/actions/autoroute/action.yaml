@@ -6,7 +6,8 @@ inputs:
     required: true
 runs:
   using: 'docker'
-  image: 'docker://ghcr.io/freerouting/freerouting:2.3.4'
+  image: 'docker://ghcr.io/freerouting/freerouting:2.2.4
+'
   entrypoint: '/bin/sh'
   args:
     - '-c'
